@@ -40,7 +40,9 @@ export default function Todo({ todo, onCheckButtonClick }) {
         !todo.iscompleted && (
           <span
             className="check-icon"
-            onClick={() => onCheckButtonClick(todo.id)}
+            onClick={() => {
+              onCheckButtonClick(todo.id);
+            }}
           >
             <CheckIcon primaryColor="#4fff4f" />
           </span>
