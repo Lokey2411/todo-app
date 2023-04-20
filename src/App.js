@@ -16,6 +16,8 @@ function App() {
   //Khởi tạo todo list
   const [todoList, setTodoList] = useState(
     JSON.parse(localStorage.getItem(TODO_APP_STORAGE_KEY))
+      ? JSON.parse(localStorage.getItem(TODO_APP_STORAGE_KEY))
+      : []
   );
   const [textInput, setTextInput] = useState("");
   useEffect(() => {
@@ -76,7 +78,7 @@ function App() {
         todo.id === id ? { ...todo, iscompleted: true } : todo
       )
     );
-  });
+  }, []);
   const onEraseButtonClick = () => {
     localStorage.clear();
     setTodoList([]);
