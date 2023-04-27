@@ -78,6 +78,9 @@ function App() {
         todo.id === id ? { ...todo, iscompleted: true } : todo
       )
     );
+    // alert(id);
+    // alert(document.getElementById(id));
+    document.getElementById(id).firstChild.classList.add("line-through");
   }, []);
   const onEraseButtonClick = () => {
     localStorage.clear();

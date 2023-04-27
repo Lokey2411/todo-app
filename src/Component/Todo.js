@@ -11,8 +11,8 @@ const ButtonStyled = styled(Button)`
     ${(p) =>
       p.iscompleted &&
       css`
-        .css-udadfb-ButtonBase {
-          text-decoration: line-through;
+        & {
+          // text-decoration: line-through !important;
         }
       `}
   }
@@ -34,8 +34,10 @@ const ButtonStyled = styled(Button)`
 export default function Todo({ todo, onCheckButtonClick }) {
   return (
     <ButtonStyled
+      id={todo.id}
       key={todo.id}
       iscompleted={todo.iscompleted}
+      className="todo"
       iconAfter={
         !todo.iscompleted && (
           <span

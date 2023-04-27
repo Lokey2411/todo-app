@@ -46,3 +46,6 @@ body {
 .App {
   border-radius: 500px;
 }
+.line-through {
+  text-decoration: line-through !important;
+}
